@@ -38,7 +38,7 @@ export default (state = {}, action) => {
         return newState;
       }
       else {
-        alert("Put of stock");
+        alert("Out of stock");
       }
 
     default:
