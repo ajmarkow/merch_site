@@ -32,9 +32,14 @@ export default (state = {}, action) => {
       console.log("Remove Reducer Reached");
 
       newState = { ...state };
-      const tempQuantity = newState[id].quantity - 1;
-      newState[id].quantity = tempQuantity;
-      return newState;
+      if (newState[id].quantity > 0) {
+        const tempQuantity = newState[id].quantity - 1;
+        newState[id].quantity = tempQuantity;
+        return newState;
+      }
+      else {
+        alert("Put of stock");
+      }
 
     default:
       return state;
